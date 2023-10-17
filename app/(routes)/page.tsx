@@ -1,5 +1,6 @@
 import getBillboard from "@/actions/get-billboard";
 import getProducts from "@/actions/get-products";
+import About from "@/components/About";
 import DesktopBanner from "@/components/DesktopBanner";
 import DesktopCategory from "@/components/DesktopCategory";
 import Header from "@/components/Header";
@@ -22,6 +23,7 @@ const HomePage = async () => {
         {/* <Billboard 
           data={billboard}
           /> */}
+          <About/>
         <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8">
           <ProductList title="Featured Products" items={products} />
         </div>

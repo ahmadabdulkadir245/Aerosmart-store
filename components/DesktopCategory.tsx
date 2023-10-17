@@ -1,7 +1,6 @@
 "use client"
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
 
 interface Category {
   id: number;
@@ -87,17 +86,7 @@ function DesktopCategory() {
         },
   ];
 
-  // const [isMounted, setIsMounted] = useState(false);
-
-  // useEffect(() => {
-  //   setIsMounted(true);
-  // }, []);
-
   const router = useRouter();
-
-  // if (!isMounted) {
-  //   return <div className="w-full h-[400px]"></div>
-  // }
 
   return (
     <div className="grid grid-cols-4 gap-2 lg:gap-8 mx-auto max-w-7xl bg-white p-6 my-6 lg:my-20 font-poppins text-gray-800">
@@ -120,8 +109,8 @@ function DesktopCategory() {
           <Image
             src={category.Image}
             alt={category.category}
-            width={120} // Specify the desired width
-            height={80} // Specify the desired height
+            width={120}
+            height={80}
             objectFit="cover"
             loading="lazy"
             placeholder="blur"
