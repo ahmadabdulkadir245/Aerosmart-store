@@ -123,6 +123,8 @@ function DesktopCategory() {
     width={120} // Specify the desired width
     height={80} // Specify the desired height
     objectFit="cover"
+    loading="lazy"
+    layout="responsive"
   />
 </div>
 
