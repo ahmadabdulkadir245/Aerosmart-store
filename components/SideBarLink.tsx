@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { useRecoilState } from "recoil";
+// import { useRecoilState } from "recoil";
+import { useState } from "react";
+
 import { navState } from "../atoms/navHandler";
 import { useRouter } from 'next/router';
 
@@ -10,7 +12,8 @@ interface SideBarLinkProps {
 }
 
 function SideBarLink({ Icon, title, path }: SideBarLinkProps) {
-  const [openSideBar, setOpenSideBar] = useRecoilState(navState);
+  // const [openSideBar, setOpenSideBar] = useRecoilState(navState);
+  const [openSideBar, setOpenSideBar] = useState(navState);
   const router = useRouter();
 
   const closeNav = () => {
