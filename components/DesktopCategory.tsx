@@ -117,16 +117,16 @@ function DesktopCategory() {
           <div className="col-span-1 lg:col-span-4">
             <div className="lg:flex space-x-4 items-center cursor-pointer">
             <div className="relative bg-gray-300 w-full h-[80px] lg:w-[120px] md:h-[120px] lg:h-[80px] rounded-md overflow-hidden">
-  <Image
-    src={category.Image}
-    alt={category.category}
-    width={120} // Specify the desired width
-    height={80} // Specify the desired height
-    objectFit="cover"
-    loading="lazy"
-    // layout="responsive"
-  />
-</div>
+          <Image
+            src={category.Image}
+            alt={category.category}
+            width={120} // Specify the desired width
+            height={80} // Specify the desired height
+            objectFit="cover"
+            loading="lazy"
+            placeholder="blur"
+          />
+        </div>
 
               <div className="mt-1 lg:mt-0">
                 <p className="text-xs lg:text-sm tracking-wide capitalize mb-[2px]">
