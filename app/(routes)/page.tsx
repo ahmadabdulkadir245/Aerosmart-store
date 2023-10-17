@@ -1,6 +1,7 @@
 import getBillboard from "@/actions/get-billboard";
 import getProducts from "@/actions/get-products";
 import DesktopBanner from "@/components/DesktopBanner";
+import DesktopCategory from "@/components/DesktopCategory";
 import Header from "@/components/Header";
 import ProductList from "@/components/product-list";
 import Billboard from "@/components/ui/billboard";
@@ -17,6 +18,7 @@ const HomePage = async () => {
       <DesktopBanner/>
     <Container>
       <div className="space-y-10 pb-10">
+        <DesktopCategory/>
         {/* <Billboard 
           data={billboard}
           /> */}

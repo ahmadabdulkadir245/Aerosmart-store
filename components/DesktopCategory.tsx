@@ -1,16 +1,25 @@
-import Image from 'next/legacy/image'
-import {useRouter} from 'next/router'
+"use client"
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
-function DesktopCategpry() {
-    const router = useRouter()
-    const categories = [
-        {
-        id: 1,
-        category: 'agriculture materials',
-        Image: 'https://images.pexels.com/photos/2933243/pexels-photo-2933243.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-        items: 7
-        },
-        {
+interface Category {
+  id: number;
+  category: string;
+  Image: string;
+  items: number;
+}
+
+function DesktopCategory() {
+  const categories: Category[] = [
+    {
+      id: 1,
+      category: 'agriculture materials',
+      Image:
+        'https://images.pexels.com/photos/2933243/pexels-photo-2933243.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      items: 7,
+    },
+    {
         id: 2,
         category: 'bricks, blocks & kerbs',
         Image: 'https://images.pexels.com/photos/6473984/pexels-photo-6473984.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
@@ -76,35 +85,62 @@ function DesktopCategpry() {
         Image: 'https://images.pexels.com/photos/129731/pexels-photo-129731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         items: 20
         },
-]
+  ];
+
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const router = useRouter();
+
+  if (!isMounted) {
+    return <div className="w-[190px]"></div>
+  }
 
   return (
-    <div  className='grid grid-cols-4  gap-2 lg:gap-8 mx-auto max-w-7xl bg-white p-6 my-6 lg:my-20 font-poppins text-gray-800'>
-        <div className="col-span-4">
+    <div className="grid grid-cols-4 gap-2 lg:gap-8 mx-auto max-w-7xl bg-white p-6 my-6 lg:my-20 font-poppins text-gray-800">
+      <div className="col-span-4">
+        <h2 className="text-center uppercase text-xl font-poppins font-semibold tracking-wide [word-spacing:5px] lg:mt-10">
+          products <span className="text-yellow-500">category</span>
+        </h2>
+        <hr className="bg-gray-400 my-2" />
+      </div>
 
-       <h2 className="text-center uppercase text-xl font-poppins font-semibold tracking-wide [word-spacing:5px] lg:mt-10">products <span className="text-yellow-500">category</span></h2>
-        <hr className=" bg-gray-400 my-2 " />
-        </div>
-
-        {categories.map(category => (
-            <div className="bg-white grid grid-cols-1 grid-flow-row-dense  lg:grid-cols-4 xl:grid-cols-4   lg:gap-y-6 lg:gap-x-0 max-w-7xl" key={category.id} onClick={() => router.push(`/category/${category.category}`)}>
-                <div className='col-span-1 lg:col-span-4 '>
-                    <div className="lg:flex  space-x-4 items-center cursor-pointer">
-                    <div className="relative bg-gray-300 w-full h-[80px] lg:w-[120px] md:h-[120px] lg:h-[80px] rounded-md overflow-hidden">
-                        <Image src={category.Image} alt={category.category}  objectFit='cover' layout='fill' />
-                    </div>
-                    <div className='mt-1 lg:mt-0 '>
-                    <p className='text-xs lg:text-sm tracking-wide capitalize mb-[2px]'>{category.category}</p>
-                    <p className="text-gray-400 hidden lg:block text-xs">
-                        {category.items} items
-                    </p>
-                        </div>  
-                        </div>
-                </div>
+      {categories.map((category) => (
+        <div
+          className="bg-white grid grid-cols-1 grid-flow-row-dense lg:grid-cols-4 xl:grid-cols-4 lg:gap-y-6 lg:gap-x-0 max-w-7xl"
+          key={category.id}
+          onClick={() => router.push(`/category/${category.category}`)}
+        >
+          <div className="col-span-1 lg:col-span-4">
+            <div className="lg:flex space-x-4 items-center cursor-pointer">
+              <div className="relative bg-gray-300 w-full h-[80px] lg:w-[120px] md:h-[120px] lg:h-[80px] rounded-md overflow-hidden">
+                <Image
+                  src={category.Image}
+                  alt={category.category}
+                  objectFit="cover"
+                  layout="fill"
+                />
+              </div>
+              <div className="mt-1 lg:mt-0">
+                <p className="text-xs lg:text-sm tracking-wide capitalize mb-[2px]">
+                  {category.category}
+                </p>
+                <p className="text-gray-400 hidden lg:block text-xs">
+                  {category.items} items
+                </p>
+              </div>
             </div>
-        ))}
+          </div>
+        </div>
+      ))}
     </div>
-  )
+  );
 }
 
-export default DesktopCategpry
+export default DesktopCategory;
+
+
+
