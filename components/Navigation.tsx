@@ -17,6 +17,7 @@ import { selectCartItems } from '../slices/cartItemsSlice';
 import SearchSuggesstions from './SearchSuggesstions';
 import { selectedCartItems, selectedCartlength } from '../slices/cartItemSlice';
 import { useRouter } from 'next/navigation';
+import NavigationCart from './NavigationCart';
 
 interface NavigationProps {
   // Define any props you may need here
@@ -111,7 +112,10 @@ function Navigation(props: NavigationProps) {
         </div>
 
         {/*  Right*/}
-        <div className='flex text-gray-500 text-xs  space-x-5 lg:space-x-12  whitespace-nowrap px-4 lg:px-'>
+    <div className='flex text-gray-500 text-xs space-x-5 lg:space-x-12 whitespace-nowrap px-4 lg:px-'>
+        <NavigationCart showSearch={showSearch} showSearchHandler={showSearchHandler} />
+        </div>
+        {/* <div className='flex text-gray-500 text-xs  space-x-5 lg:space-x-12  whitespace-nowrap px-4 lg:px-'>
           <div className='flex space-x space-x-6 items-center'>
             <BiSearchAlt
               className={`lg:hidden w-6 h-6 lg:w-7 lg:h-7 ${showSearch ? 'hidden' : ''}`}
@@ -139,7 +143,7 @@ function Navigation(props: NavigationProps) {
               Cart
             </p>
           </div>
-        </div>
+        </div> */}
       </nav>
 
       {/* search for mobile */}

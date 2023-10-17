@@ -1,5 +1,6 @@
 import getBillboard from "@/actions/get-billboard";
 import getProducts from "@/actions/get-products";
+import DesktopBanner from "@/components/DesktopBanner";
 import Header from "@/components/Header";
 import ProductList from "@/components/product-list";
 import Billboard from "@/components/ui/billboard";
@@ -10,9 +11,12 @@ export const revalidate = 0;
 const HomePage = async () => {
   const products = await getProducts({ isFeatured: true });
   const billboard = await getBillboard("11ad0159-1303-4a95-b893-da1752ba8b48");
+  console.log('THIS ARE THE BILLBOARDS' + billboard)
 
   return (
+    <>
     <Container>
+      <DesktopBanner/>
       <div className="space-y-10 pb-10">
         <Billboard 
           data={billboard}
@@ -22,6 +26,7 @@ const HomePage = async () => {
         </div>
       </div>
     </Container>
+          </>
   )
 };
 
