@@ -87,17 +87,17 @@ function DesktopCategory() {
         },
   ];
 
-  const [isMounted, setIsMounted] = useState(false);
+  // const [isMounted, setIsMounted] = useState(false);
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  // useEffect(() => {
+  //   setIsMounted(true);
+  // }, []);
 
   const router = useRouter();
 
-  if (!isMounted) {
-    return <div className="w-[190px]"></div>
-  }
+  // if (!isMounted) {
+  //   return <div className="w-full h-[400px]"></div>
+  // }
 
   return (
     <div className="grid grid-cols-4 gap-2 lg:gap-8 mx-auto max-w-7xl bg-white p-6 my-6 lg:my-20 font-poppins text-gray-800">
@@ -124,7 +124,7 @@ function DesktopCategory() {
     height={80} // Specify the desired height
     objectFit="cover"
     loading="lazy"
-    layout="responsive"
+    // layout="responsive"
   />
 </div>
 
