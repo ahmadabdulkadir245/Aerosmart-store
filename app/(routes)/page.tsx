@@ -4,6 +4,7 @@ import About from "@/components/About";
 import DesktopBanner from "@/components/DesktopBanner";
 import DesktopCategory from "@/components/DesktopCategory";
 import Header from "@/components/Header";
+import Main from "@/components/Main";
 import ProductList from "@/components/product-list";
 import Billboard from "@/components/ui/billboard";
 import Container from "@/components/ui/container";
@@ -19,7 +20,8 @@ const HomePage = async () => {
       <DesktopBanner/>
     <Container>
       <div className="space-y-10 pb-10">
-        <DesktopCategory/>
+        <Main/>
+        {/* <DesktopCategory/> */}
         {/* <Billboard 
           data={billboard}
           /> */}
