@@ -20,7 +20,7 @@ const Info: React.FC<InfoProps> = ({ data }) => {
 
   return ( 
     <div>
-      <h1 className="text-3xl font-bold text-gray-900">{data.name}</h1>
+      <h1 className="text-3xl font-bold text-gray-900 uppercase ">{data.name}</h1>
       <div className="mt-3 flex items-end justify-between">
         <p className="text-2xl text-gray-900">
           <Currency value={data?.price} />
@@ -40,10 +40,10 @@ const Info: React.FC<InfoProps> = ({ data }) => {
         </div>
       </div>
       <div className="mt-10 flex items-center gap-x-3">
-        <Button onClick={onAddToCart} className="flex items-center gap-x-2">
+
+        <Button onClick={onAddToCart} className="capitalize w-full h-[48px] rounded-md text-white   bg-yellow-500  mb-2 flex items-center justify-center m-auto hover:bg-yellow-600 transition-all delay-100 ease-in font-changa space-x-3">
           Add To Cart
-          <ShoppingCart size={20} />
-        </Button>
+           </Button>
       </div>
     </div>
   );

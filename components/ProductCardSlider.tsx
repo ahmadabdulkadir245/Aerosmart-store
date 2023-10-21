@@ -1,5 +1,11 @@
-"use client";
-
+"use client"
+import SwiperCore, { Navigation, Pagination } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { TbCurrencyNaira } from 'react-icons/tb';
+import { BsStarFill, BsStarHalf } from 'react-icons/bs';
 import Image from "next/image";
 import { MouseEventHandler } from "react";
 import { Expand, ShoppingCart } from "lucide-react";
@@ -39,16 +45,21 @@ const ProductCard: React.FC<ProductCard> = ({
   };
   
   return ( 
-    <div onClick={handleClick} className="bg-white group cursor-pointer rounded-xl border p-3 space-y-4">
+    <div onClick={handleClick} className="group cursor-pointer">
       {/* Image & actions */}
-      <div className="aspect-square rounded-xl bg-gray-100 relative">
+      
+      <div className="aspect-square  overflow-hidden shadow-sm bg-gray-100 relative">
+      {/* <div className="relative h-[150px] w-[200px] m-auto rounded-md overflow-hidden shadow-sm"> */}
+      <div className='relative h-[120px] w-full m-auto overflow-hidden shadow-sm'>
         <Image 
           src={data.images?.[0]?.url} 
           alt="" 
-          fill
-          className="aspect-square object-cover rounded-md"
-          placeholder="blur"
+          width={120}
+          height={80}
+          objectFit="cover"
+          loading="lazy"
         />
+        </div>
         <div className="opacity-0 group-hover:opacity-100 transition absolute w-full px-6 bottom-5">
           <div className="flex gap-x-6 justify-center">
             <IconButton 
@@ -63,14 +74,13 @@ const ProductCard: React.FC<ProductCard> = ({
         </div>
       </div>
       {/* Description */}
-      <div>
-        <p className="font-semibold text-lg">{data.name}</p>
-        <p className="text-sm text-gray-500">{data.category?.name}</p>
-      </div>
-      {/* Price & Reiew */}
-      <div className="flex items-center justify-between">
-        <Currency value={data?.price} />
-      </div>
+      <div className="capitalize text-xs pt-1 text-center w-[90%] ">
+                <p className="line-clamp-1">{data.name}</p>
+                <p className="">
+                  <Currency value={data?.price} />
+                </p>
+              </div>
+
     </div>
   );
 }

@@ -1,59 +1,83 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation, Pagination } from 'swiper/modules';
 import Image from 'next/legacy/image';
 import { TbCurrencyNaira } from 'react-icons/tb';
-import { useRouter } from 'next/router';
+import { MouseEventHandler } from "react";
+import { Expand, ShoppingCart } from "lucide-react";
+import { useRouter } from "next/navigation";
+import IconButton  from "@/components/ui/icon-button";
+import usePreviewModal from "@/hooks/use-preview-modal";
+import useCart from "@/hooks/use-cart";
+import { Product } from "@/types";
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
 
-// Install required modules
-// SwiperCore.use([Navigation, Pagination]);
 
-interface Product {
-  id: number;
-  title: string;
-  image_url: string;
-  price: number;
-}
 
 interface SlidesWithDiscountProps {
-  slides: number;
-  products: Product[];
-  discount: boolean;
+  product: Product;
+  discount: boolean
 }
 
-function SlidesWithDiscount({ slides, products, discount }: SlidesWithDiscountProps) {
+function SlidesWithDiscount({ product, discount }: SlidesWithDiscountProps) {
+  const previewModal = usePreviewModal();
+  const cart = useCart();
   const router = useRouter();
+ 
+  const handleClick = () => {
+    router.push(`/product/${product?.id}`);
+  };
 
+  const onPreview: MouseEventHandler<HTMLButtonElement> = (event) => {
+    event.stopPropagation();
+
+    previewModal.onOpen(product);
+  };
+
+  const onAddToCart: MouseEventHandler<HTMLButtonElement> = (event) => {
+    event.stopPropagation();
+
+    cart.addItem(product);
+  };
   return (
-    <div>
-      <Swiper watchSlidesProgress={true} slidesPerView={slides} spaceBetween={10} className="mySwiper overflow-x-scroll">
-        {products.map((product) => (
-          <SwiperSlide key={product.id} onClick={() => router.push(`/products/${product.id}`)} className='cursor-pointer'>
-            <div className='relative h-[120px] w-full m-auto overflow-hidden shadow-sm'>
-              <Image src={product.image_url} alt={product.title} layout='fill' objectFit='cover' priority />
+    <div onClick={handleClick} className=" group cursor-pointer">
+            <div className='relative m-auto overflow-hidden shadow-sm '>
+              <Image src={product.images[0]?.url} alt={product?.name}  objectFit='contain'     
+              width={190}
+              height={120}
+              loading={'lazy'}
+              placeholder='blur'  
+              />
+
+          <div className="opacity-0 group-hover:opacity-100 transition absolute w-full px-6 bottom-5">
+          <div className="flex gap-x-6 justify-center">
+            <IconButton 
+              onClick={onPreview} 
+              icon={<Expand size={20} className="text-gray-600" />}
+            />
+            <IconButton
+              onClick={onAddToCart} 
+              icon={<ShoppingCart size={20} className="text-gray-600" />} 
+            />
+          </div>
+        </div>
             </div>
             <div className="capitalize text-xs pt-1 w-[90%] pb-2">
-              <p className="font-poppins">
-                {product.title}
+              <p className="font-poppins ">
+                {product?.name}
               </p>
               {discount ?
                 <>
-                  <p className='flex items-center space-x-2 S font-changa'><TbCurrencyNaira className="w-4 h-4" />{((product.price - (product.price / 2))).toLocaleString()}</p>
+                <p className='flex items-center space-x-2 text-sm font-changa'>
+                  <TbCurrencyNaira className="w-4 h-4" />
+                  {typeof product?.price === 'number' ? (
+                    ((product.price - product.price / 2).toLocaleString())
+                  ) : null}
+                </p>
                   <p className='flex items-center space-x-2 text-[10px] text-gray-600 font-changa line-through'><TbCurrencyNaira className="w-3 h-4" />{(product.price).toLocaleString()}</p>
                 </>
                 :
                 <p className='flex items-center space-x-2 S font-changa'><TbCurrencyNaira className="w-4 h-4" />{((product.price))}</p>
               }
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+          </div>
   );
 }
 
