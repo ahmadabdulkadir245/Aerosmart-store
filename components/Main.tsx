@@ -1,6 +1,4 @@
 import About from "./About";
-import DesktopCategory from "./DesktopCategory";
-import LatestProducts from "./LatestProducts";
 import { Product } from "@/types";
 import ProductSlider from "./ProductSlider";
 import ProductList from "./product-list";

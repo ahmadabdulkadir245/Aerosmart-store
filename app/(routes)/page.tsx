@@ -3,7 +3,6 @@ import getProducts from "@/actions/get-products";
 import About from "@/components/About";
 import DesktopBanner from "@/components/DesktopBanner";
 import DesktopCategory from "@/components/DesktopCategory";
-import FeaturedProducts from "@/components/FeaturedProducts";
 import Header from "@/components/Header";
 import Main from "@/components/Main";
 import ProductSlider from "@/components/ProductSlider";
