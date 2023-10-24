@@ -113,7 +113,7 @@ function DesktopCategory() {
             height={80}
             objectFit="cover"
             loading="lazy"
-            placeholder="blur"
+            // placeholder="blur"
           />
         </div>
 
