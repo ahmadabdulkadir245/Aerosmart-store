@@ -50,9 +50,9 @@ const NavigationCart: React.FC<NavigationCartProps> = ({
 
       <div
         onClick={() => router.push("/cart")}
-        className='link flex items-center relative'
+        className='link flex items-center relative '
       >
-        <span className='absolute -top-1 -right-1 lg-right-10 h-4 text-xs w-4 bg-yellow-400 rounded-full text-center font-semibold items-center font-titilliumWeb transition-all duration-500 linear animate-pingOnce'>
+        <span className='absolute -top-1 -right-1 lg-right-10 h-4 text-xs w-4 bg-yellow-400 rounded-full text-center font-semibold items-center font-titilliumWeb transition-all duration-500 linear animate-pingOnce '>
           {cart.items.length}
         </span>
         <AiOutlineShoppingCart className='w-6 h-6 lg:w-7 lg:h-7' />
