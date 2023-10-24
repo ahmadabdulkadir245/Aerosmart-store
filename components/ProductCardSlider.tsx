@@ -58,7 +58,7 @@ const ProductCard: React.FC<ProductCard> = ({
           height={80}
           objectFit="cover"
           placeholder='blur'
-          // loading="lazy"
+          loading="lazy"
         />
         </div>
         <div className="opacity-0 group-hover:opacity-100 transition absolute w-full px-6 bottom-5">
