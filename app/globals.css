@@ -13,9 +13,9 @@ body,
     @apply cursor-pointer hover:underline;
   }
   @layer base {
-    html {
+    /* html {
       @apply font-poppins;
-    }
+    } */
     body {
       @apply bg-gray-50;
     }
