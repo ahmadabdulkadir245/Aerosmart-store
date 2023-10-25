@@ -5,6 +5,8 @@ export interface Product {
   price: string;
   isFeatured: boolean;
   discount: boolean;
+  description: string;
+  quantity: number;
   size: Size;
   color: Color;
   images: Image[]
