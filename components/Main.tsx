@@ -20,7 +20,7 @@ interface MainProps {
     <DesktopCategory />
       <About />
       <ProductSlider sectionTitle={'latest products'} products={products.slice(0, 10)} path={'/'} discount={false}/>
-      <ProductSlider sectionTitle={'discount products'} products={reversedProducts.slice(0, 10)} path={'/'} discount={false}/>
+      <ProductSlider sectionTitle={'discount products'} products={reversedProducts.slice(0, 10)} path={'/'} discount={true}/>
       <ProductSlider sectionTitle={'featured products'} products={products.slice(0, 10)} path={'/'} discount={false}/>
       <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8">
           <ProductList title="Featured Products" items={products} />
