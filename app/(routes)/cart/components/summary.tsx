@@ -57,12 +57,7 @@ const Summary = () => {
       </Button>
     </div> */}
     <div className="">
-            <div className="hidden  items-center uppercase bg-gray-200 py-2 px-5 text-gray-700 text-sm font-poppins tracking-wider text-center lg:col-span-5">
-        <div className="text-sm">
-          <p><span className='hidden lg:inline-block'>ORDER SUMMERY</span> </p>
-        </div>
-
-            </div>
+  
             <div className="flex justify-between px-8 pt-6 lg:pt-6  ">
             <p > Products:</p>
             <p className="flex items-center font-changa">{items.length}</p>
