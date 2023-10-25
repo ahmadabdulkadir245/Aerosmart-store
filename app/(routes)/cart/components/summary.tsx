@@ -68,14 +68,14 @@ const Summary = () => {
             </div>
           <div className="hidden  px-8 shadow-xl w-full    pb-2 overflow-hiddentext-gray-500  lg:block">
       <button className="capitalize w-full h-[48px] rounded-md text-white  text-sm bg-yellow-500  mb-2 flex items-center justify-center m-auto hover:bg-yellow-400 transition-all delay-100 ease-in font-changa" 
-      onClick={onCheckout}>Go To Checkout | <TbCurrencyNaira  className="w-5 h-5"/> {totalPrice.toLocaleString()}
+      onClick={onCheckout} disabled={items.length === 0} >Go To Checkout | <TbCurrencyNaira  className="w-5 h-5"/> {totalPrice.toLocaleString()}
       </button>
           </div>
           </div>
 
           <div className=" px-3 shadow-xl w-full  text-lg  pt-4 pb-2 overflow-hiddentext-gray-500 lg:hidden ">
       <Button className="capitalize w-[90%] h-[48px] rounded-md text-white  text-sm bg-yellow-500  mb-2 flex items-center justify-center m-auto font-changa" 
-      onClick={onCheckout}>Go To Checkout | <TbCurrencyNaira  className="w-5 h-5"/>{totalPrice.toLocaleString()}
+      onClick={onCheckout} disabled={items.length === 0} >Go To Checkout | <TbCurrencyNaira  className="w-5 h-5"/>{totalPrice.toLocaleString()}
       </Button>
           </div>
       </>

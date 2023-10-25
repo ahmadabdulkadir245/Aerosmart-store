@@ -67,7 +67,7 @@ const CartItem: React.FC<CartItemProps> = ({
     </li> */}
      <div className='flex justify-between  space-x-5 my-5 text-xs px-[12px]'>
         <div className='relative w-[150px] lg:w-[200px] lh-full g:h-[150px] text-gray-600 '>
-        <Image src={data.images[0].url} alt={'image'} layout='fill' objectFit="cover" />
+        <Image src={data.images[0].url} alt={'image'} layout='fill' objectFit="contain" placeholder="blur" />
         </div>
         <div className='flex-1'>
             <h3 className='text-sm capitalize font-poppins mb-1'>{data.name}</h3>
