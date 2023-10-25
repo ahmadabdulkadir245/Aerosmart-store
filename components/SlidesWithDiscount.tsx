@@ -67,9 +67,9 @@ function SlidesWithDiscount({ product, discount }: SlidesWithDiscountProps) {
                 <>
                 <p className='flex items-center space-x-2 text-sm font-changa'>
                   <TbCurrencyNaira className="w-4 h-4" />
-                  {typeof product?.price === 'number' ? (
+                  {typeof product?.price === 'number' && (
                     ((product.price - product.price / 2).toLocaleString())
-                  ) : null}
+                  )}
                 </p>
                   <p className='flex items-center space-x-2 text-[10px] text-gray-600 font-changa line-through'><TbCurrencyNaira className="w-3 h-4" />{(product.price).toLocaleString()}</p>
                 </>
