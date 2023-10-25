@@ -57,7 +57,7 @@ const Summary = () => {
       </Button>
     </div> */}
     <div className="">
-            <div className="hidden lg:flex items-center uppercase bg-gray-200 py-2 px-5 text-gray-700 text-sm font-poppins tracking-wider text-center lg:col-span-5">
+            <div className="hidden  items-center uppercase bg-gray-200 py-2 px-5 text-gray-700 text-sm font-poppins tracking-wider text-center lg:col-span-5">
         <div className="text-sm">
           <p><span className='hidden lg:inline-block'>ORDER SUMMERY</span> </p>
         </div>
@@ -79,9 +79,9 @@ const Summary = () => {
           </div>
 
           <div className=" px-3 shadow-xl w-full  text-lg  pt-4 pb-2 overflow-hiddentext-gray-500 lg:hidden ">
-      <button className="capitalize w-[90%] h-[48px] rounded-md text-white  text-sm bg-yellow-500  mb-2 flex items-center justify-center m-auto font-changa" 
+      <Button className="capitalize w-[90%] h-[48px] rounded-md text-white  text-sm bg-yellow-500  mb-2 flex items-center justify-center m-auto font-changa" 
       onClick={onCheckout}>Go To Checkout | <TbCurrencyNaira  className="w-5 h-5"/>{totalPrice.toLocaleString()}
-      </button>
+      </Button>
           </div>
       </>
   );
