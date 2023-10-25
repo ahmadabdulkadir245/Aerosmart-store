@@ -29,6 +29,11 @@ const CartPage = () => {
           <h1 className="text-3xl font-bold text-black">Shopping Cart</h1>
           <div className="mt-12 lg:grid lg:grid-cols-12 lg:items-start gap-x-12">
             <div className="lg:col-span-7">
+              <div className="hidden lg:flex items-center uppercase bg-gray-200 py-2 px-5 text-gray-800 text-sm font-poppins tracking-wider text-center">
+        <div className="">
+          <p><span className='hidden lg:inline-block font-semibold'>PRODUCTS</span> </p>
+        </div>
+           </div>
               {cart.items.length === 0 && <p className="text-neutral-500">No items added to cart.</p>}
               <ul>
                 {cart.items.map((item) => (
