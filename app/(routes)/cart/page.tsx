@@ -41,10 +41,11 @@ const CartPage = () => {
                 ))}
               </ul>
             </div>
-            <div className="hidden  items-center uppercase bg-gray-200 py-2 px-5 text-gray-700 text-sm font-poppins tracking-wider text-center lg:col-span-5">
+            <div className="hidden lg:flex items-center uppercase bg-gray-200 py-2 px-5 text-gray-700 text-sm font-poppins tracking-wider text-center">
         <div className="text-sm">
           <p><span className='hidden lg:inline-block'>ORDER SUMMERY</span> </p>
         </div>
+
             </div>
             <Summary />
           </div>
