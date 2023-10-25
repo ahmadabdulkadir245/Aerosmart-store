@@ -7,12 +7,10 @@ import useCart from '@/hooks/use-cart';
 
 import Summary from './components/summary'
 import CartItem from './components/cart-item';
-import ProductList from '@/components/product-list';
-import getProducts from '@/actions/get-products';
 
 export const revalidate = 0;
 
-const CartPage = async () => {
+const CartPage = () => {
   const [isMounted, setIsMounted] = useState(false);
   const cart = useCart();
 
@@ -23,8 +21,6 @@ const CartPage = async () => {
   if (!isMounted) {
     return null;
   }
-  const products = await getProducts({ isFeatured: true });
-  console.log(products)
   return (
     <div className="bg-white">
       <Container>
