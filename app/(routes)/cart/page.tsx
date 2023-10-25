@@ -7,8 +7,8 @@ import useCart from '@/hooks/use-cart';
 
 import Summary from './components/summary'
 import CartItem from './components/cart-item';
-import getProducts from '@/actions/get-products';
 import ProductList from '@/components/product-list';
+import getProducts from '@/actions/get-products';
 
 export const revalidate = 0;
 
@@ -24,7 +24,7 @@ const CartPage = async () => {
     return null;
   }
   const products = await getProducts({ isFeatured: true });
-
+  console.log(products)
   return (
     <div className="bg-white">
       <Container>
@@ -54,7 +54,7 @@ const CartPage = async () => {
           </div>
         </div>
         
-        <ProductList title="Featured Products" items={products} />
+        {/* <ProductList title="Featured Products" items={products} /> */}
       </Container>
     </div>
   )
