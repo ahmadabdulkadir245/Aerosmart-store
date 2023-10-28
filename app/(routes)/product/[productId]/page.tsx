@@ -1,3 +1,4 @@
+"use client"
 import ProductList from '@/components/product-list'
 import Gallery from '@/components/gallery';
 import Info from '@/components/info';
@@ -23,6 +24,7 @@ const ProductPage: React.FC<ProductPageProps> = async ({
   params
  }) => {
   const product = await getProduct(params.productId);
+  console.log(product)
   const suggestedProducts = await getProducts({ 
     categoryId: product?.category?.id
   });
@@ -35,6 +37,7 @@ const ProductPage: React.FC<ProductPageProps> = async ({
 
   const handleAddToCart = () => {
   }
+  
   const handleAddToWishlist = () => {
 
   }
@@ -64,7 +67,7 @@ const ProductPage: React.FC<ProductPageProps> = async ({
 <div className="flex flex-col-reverse lg:flex-row">
 
 
-<div className="flex items-center space-x-2 my-3 w-full   lg:block lg:space-x-0 lg:space-y-2  lg:my-0 lg:w-[150px] lg:h-[350px]   lg:overflow-y-scroll scrollbar-hide">
+<div className="flex items-center space-x-2 my-3 w-full h-full   lg:block lg:space-x-0 lg:space-y-2  lg:my-0 lg:w-[150px] lg:h-[350px]   lg:overflow-y-scroll scrollbar-hide">
 {imageSlider.map((image, index) => (
 
 <div key={index} className="relative   w-[80px] h-[60px]  overflow-hidden rounded-md border-[3px]  cursor-pointer hover:border-blue-500 p-4">
@@ -167,8 +170,10 @@ const ProductPage: React.FC<ProductPageProps> = async ({
   <hr className="bg-gray-400 my-2" />
 
   <p className="prose prose-h1:text-3xl   prose-h1:font-semibold prose-h2:text-2xl  prose-h2:font-semibold prose-h2:mt-[0px]
-prose-h2:mb-[24px] prose-p:text-xs prose-headings:capitalize prose-a:text-blue-500 hover:prose-a:text-blue-800 font-poppins" dangerouslySetInnerHTML={{ __html: product?.description }} 
-/>
+prose-h2:mb-[24px] prose-p:text-xs prose-headings:capitalize prose-a:text-blue-500 hover:prose-a:text-blue-800 font-poppins" 
+>
+{product?.description}
+</p>
 </div>
       </Container>
     </div>  

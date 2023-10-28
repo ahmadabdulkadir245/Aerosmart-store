@@ -71,8 +71,8 @@ const CartItem: React.FC<CartItemProps> = ({
         </div>
         <div className='flex-1'>
             <h3 className='text-sm capitalize font-poppins mb-1'>{data.name}</h3>
-            <p className="lowercase leading-4 line-clamp-4 text-xs h-[60px] ">  <p  dangerouslySetInnerHTML={{ __html: data.category }} 
-      /> </p>
+            <p className="lowercase leading-4 line-clamp-4 text-xs h-[60px] "> {data.category.name } 
+    </p>
             <div className='  font-primary flex items-center space-x-1 text-xs  mt-[6px] text-gray-800 font-semibold'>
             <TbCurrencyNaira  className="w-4 h-4 text-gray-600"/>{(data.price)?.toLocaleString()}
           </div>
