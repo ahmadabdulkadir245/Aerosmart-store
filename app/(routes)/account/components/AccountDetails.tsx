@@ -30,8 +30,8 @@ function AccountDetails({ user_id, setLoading }: AccountDetailsProps) {
 
   let inputDisabled = false;
   const message: Message = {
-    success: "Success",
-    error: "Failure",
+    success: "",
+    error: "",
   };
 
   const editName = () => {
