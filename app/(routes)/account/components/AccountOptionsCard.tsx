@@ -3,7 +3,7 @@ import { BiHeart, BiStore, BiMap } from 'react-icons/bi';
 import { useRouter } from 'next/navigation';
 import { useContext } from 'react';
 
-function AccountOptionsCard({ selected, setSelected }: { selected: string; setSelected: React.Dispatch<React.SetStateAction<string>> } ) {
+function AccountOptionsCard({ selected, setSelected }: { selected: string; setSelected: boolean } ) {
   const router = useRouter();
   // const { logout, authToken } = useContext(AuthContext);
 

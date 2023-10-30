@@ -17,7 +17,7 @@ interface Message {
 
 interface AccountDetailsProps {
   user_id: number;
-  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  setLoading: boolean;
 }
 
 function AccountDetails({ user_id, setLoading }: AccountDetailsProps) {
