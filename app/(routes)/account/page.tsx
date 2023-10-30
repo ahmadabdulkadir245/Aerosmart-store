@@ -66,7 +66,7 @@ function Account() {
         </div>
       </div>
       <div className="px-3 py-4 text-gray-500 lg:py-0 lg:my-10 lg:grid grid-cols-4 gap-8 max-w-7xl mx-auto">
-        <AccountOptionsCard selected={selected} setSelected={setSelected} />
+        <AccountOptionsCard selected={selected} setSelected={true} />
         <AccountDetails user_id={user_id} setLoading={false} />
       </div>
     </>
