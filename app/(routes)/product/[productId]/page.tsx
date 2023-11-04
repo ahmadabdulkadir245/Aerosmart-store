@@ -30,7 +30,7 @@ const ProductPage: React.FC<ProductPageProps> = async ({
   });
 
   if (!product) {
-    return <Loading/>;
+    return null;
   }
 
   const imageSlider: number[] = [1,2,3,4,5]
