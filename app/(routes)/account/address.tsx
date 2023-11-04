@@ -12,7 +12,7 @@ interface OrdersProps {
   authToken: string;
 }
 
-function Orders({ user_id, authToken }: OrdersProps) {
+function Address({ user_id, authToken }: OrdersProps) {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
  const products: string[] = []
@@ -43,5 +43,5 @@ function Orders({ user_id, authToken }: OrdersProps) {
   );
 }
 
-export default Orders;
+export default Address;
 
