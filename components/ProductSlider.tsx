@@ -78,7 +78,7 @@ function ProductSlider({ sectionTitle, products, path, bgColor, discount }: Prod
       <div className='relative w-full overflow-hidden px-3 pt-2 bg-white'>
       <Swiper watchSlidesProgress={true} slidesPerView={slideCount} spaceBetween={10} className="mySwiper overflow-x-scroll">
         {products.map((product) => (
-      <SwiperSlide key={product.id} onClick={() => router.push(`/products/${product.id}`)} className='cursor-pointer'>
+      <SwiperSlide key={product.id} onClick={() => router.push(`/product/${product.id}`)} className='cursor-pointer'>
         <SlidesWithDiscount key={product.id} product={product} discount={product?.discount} />
               </SwiperSlide>
         ))}

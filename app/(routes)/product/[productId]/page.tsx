@@ -11,6 +11,7 @@ import { CiShoppingCart } from "react-icons/ci";
 import { TbCurrencyNaira } from 'react-icons/tb';
 import Image from 'next/image';
 import { ImFacebook, ImWhatsapp } from 'react-icons/im';
+import Loading from './loading';
 
 export const revalidate = 0;
 
@@ -29,7 +30,7 @@ const ProductPage: React.FC<ProductPageProps> = async ({
   });
 
   if (!product) {
-    return null;
+    return <Loading/>;
   }
 
   const imageSlider: number[] = [1,2,3,4,5]
