@@ -13,10 +13,12 @@ interface OrdersProps {
   authToken: string;
 }
 
-function Address({ user_id, authToken }: OrdersProps) {
+function Address() {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
  const products: string[] = []
+ const user_id = 1
+ const authToken = 'token'
 
   useEffect(() => {
     setTimeout(() => {
