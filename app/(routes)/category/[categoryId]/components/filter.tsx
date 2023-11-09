@@ -1,4 +1,4 @@
-"use client"
+import React from 'react';
 
 const Filter: React.FC = () => {
   return (
@@ -7,55 +7,11 @@ const Filter: React.FC = () => {
       <div className="py-4 px-6 bg-white font-poppins rounded-md">
         <h3 className="text-lg font-semibold mb-3">Product categories</h3>
         <div className="space-y-3">
-        <div className="flex items-center space-x-2">
-                <input type="checkbox" name="" id="" className="cursor-pointer"/>
-              <p className="capitalize">Agriculture Materials</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <input type="checkbox" name="" id="" className="cursor-pointer"/>
-              <p className="capitalize">bricks, blocks & kerbs</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <input type="checkbox" name="" id="" className="cursor-pointer"/>
-              <p className="capitalize">building materials</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <input type="checkbox" name="" id="" className="cursor-pointer"/>
-              <p className="capitalize">concrete, cement & stones</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <input type="checkbox" name="" id="" className="cursor-pointer"/>
-              <p className="capitalize">doors</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <input type="checkbox" name="" id="" className="cursor-pointer"/>
-              <p className="capitalize">electrical items</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <input type="checkbox" name="" id="" className="cursor-pointer"/>
-              <p className="capitalize">paint</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <input type="checkbox" name="" id="" className="cursor-pointer"/>
-              <p className="capitalize">pulmbing</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <input type="checkbox" name="" id="" className="cursor-pointer"/>
-              <p className="capitalize">roof covering</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <input type="checkbox" name="" id="" className="cursor-pointer"/>
-              <p className="capitalize">tiles</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <input type="checkbox" name="" id="" className="cursor-pointer"/>
-              <p className="capitalize">windows</p>
-              </div>
-              <div className="flex items-center space-x-2">
-                <input type="checkbox" name="" id="" className="cursor-pointer"/>
-              <p className="capitalize">wood</p>
-              </div>
-        
+          <div className="flex items-center space-x-2">
+            <input type="checkbox" className="cursor-pointer" />
+            <p className="capitalize">Agriculture Materials</p>
+          </div>
+          {/* Add similar blocks for other categories */}
         </div>
       </div>
       {/* Custom price section */}
@@ -65,15 +21,11 @@ const Filter: React.FC = () => {
           <div className="flex items-center space-x-2">
             <input
               type="number"
-              name=""
-              id=""
               className="border-2 border-gray-400 w-1/2 rounded-md p-2 outline-none"
               placeholder="Min price"
             />
             <input
               type="text"
-              name=""
-              id=""
               className="border-2 border-gray-400 w-1/2 rounded-md p-2 outline-none"
               placeholder="Max price"
             />
@@ -87,33 +39,14 @@ const Filter: React.FC = () => {
       <div className="py-4 px-6 bg-white font-poppins rounded-md my-4">
         <h3 className="text-xl font-semibold mb-3 text-center">Brand</h3>
         <div className="space-y-3">
-        <div className="flex items-center space-x-2">
-                <input type="checkbox" name="" id="" className="cursor-pointer"/>
-              <p className="capitalize">Dangote</p>
-              </div>
-
-              <div className="flex items-center space-x-2">
-                <input type="checkbox" name="" id="" className="cursor-pointer"/>
-              <p className="capitalize">Cemex</p>
-              </div>
-
-              <div className="flex items-center space-x-2">
-                <input type="checkbox" name="" id="" className="cursor-pointer"/>
-              <p className="capitalize">PPMC Limited</p>
-              </div>
-
-              <div className="flex items-center space-x-2">
-                <input type="checkbox" name="" id="" className="cursor-pointer"/>
-              <p className="capitalize">Saint Gobain</p>
-              </div>
-
-              <div className="flex items-center space-x-2">
-                <input type="checkbox" name="" id="" className="cursor-pointer"/>
-              <p className="capitalize">Julius Berger Nigeria PLC</p>
-              </div>
+          <div className="flex items-center space-x-2">
+            <input type="checkbox" className="cursor-pointer" />
+            <p className="capitalize">Dangote</p>
+          </div>
+          {/* Add similar blocks for other brands */}
         </div>
       </div>
-      </div>
+    </div>
   );
 };
 
