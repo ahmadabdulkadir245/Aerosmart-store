@@ -12,7 +12,7 @@ interface OrdersProps {
   user_id: string;
 }
 
-function Orders({ user_id }: OrdersProps) {
+function Orders() {
   const [selected, setSelected] = useState('orders');
   const router = useRouter();
   const orders = []
