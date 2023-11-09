@@ -13,7 +13,7 @@ import FilterBar from "./components/FilterBar";
 
 
 
-const SearchResultPage: React.FC = ({ user_id, authToken }) => {
+const SearchResultPage: React.FC = () => {
   const router = useRouter();
   const [totalPages, setTotalPages] = useState(1);
   const [page, setPage] = useState(0);

@@ -8,7 +8,7 @@ import IconButton  from "@/components/ui/icon-button";
 import Button from "@/components/ui/button";
 import { Color, Size } from "@/types";
 
-import Filter from "./filter";
+import Filters from "./filters";
 
 interface MobileFiltersProps {
   sizes: Size[],
@@ -20,6 +20,7 @@ const MobileFilters: React.FC<MobileFiltersProps> = ({
   colors
 }) => {
   const [open, setOpen] = useState(false);
+
 
   const onOpen = () => setOpen(true);
   const onClose = () => setOpen(false);
@@ -49,12 +50,12 @@ const MobileFilters: React.FC<MobileFiltersProps> = ({
             </div>
 
             <div className="p-4">
-              <Filter
+              <Filters
                 valueKey="sizeId" 
                 name="Sizes" 
                 data={sizes}
               />
-              <Filter 
+              <Filters 
                 valueKey="colorId" 
                 name="Colors" 
                 data={colors}
