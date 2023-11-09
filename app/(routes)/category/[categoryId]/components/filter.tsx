@@ -1,4 +1,3 @@
-"use client"
 const Filter: React.FC = () => {
   return (
     <div className="hidden lg:block col-span-1 text-xs">
