@@ -7,8 +7,8 @@ import { useEffect, useMemo, useState } from "react";
 import ReactPaginate from "react-paginate";
 import ColumnProducts from "./components/ColumnProducts";
 import Products from "./components/Products";
-import Filter from "./components/Filter";
 import FilterBar from "./components/FilterBar";
+import FilterPart from "./components/FilterPart";
 
 
 
@@ -92,7 +92,7 @@ const SearchResultPage: React.FC = () => {
           </div>
         </div>
 
-        <Filter />
+        <FilterPart />
         <div className="col-span-3 hidden lg:block">
           <FilterBar />
           <div className='grid grid-cols-3 grid-flow-row-dense md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 mx-auto m-2 gap-3 my-5'>
