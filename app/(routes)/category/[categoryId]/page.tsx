@@ -7,8 +7,8 @@ import { useEffect, useMemo, useState } from "react";
 import ReactPaginate from "react-paginate";
 import ColumnProducts from "./components/ColumnProducts";
 import Products from "./components/Products";
-import FilterBar from "./components/FilterBar";
 import Filter from "./components/Filter";
+import FilterBar from "./components/FilterBar";
 
 
 
