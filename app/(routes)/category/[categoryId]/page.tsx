@@ -7,8 +7,8 @@ import { useEffect, useMemo, useState } from "react";
 import ReactPaginate from "react-paginate";
 import ColumnProducts from "./components/ColumnProducts";
 import Products from "./components/Products";
-import { Filter } from "lucide-react";
 import FilterBar from "./components/FilterBar";
+import Filter from "./components/Filter";
 
 
 

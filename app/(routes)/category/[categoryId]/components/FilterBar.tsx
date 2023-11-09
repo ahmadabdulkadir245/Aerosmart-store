@@ -1,7 +1,7 @@
 import React from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 
-function FilterBar() {
+const FilterBar: React.FC = () => {
   return (
     <>
       <div className="col-span-3 bg-white w-full rounded-sm p-2 flex justify-between items-center text-xs">
