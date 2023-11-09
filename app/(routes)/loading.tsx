@@ -1,22 +1,16 @@
-import Container from "@/components/ui/container";
-import Skeleton from "@/components/ui/skeleton";
+import React from 'react'
+import { PuffLoader } from 'react-spinners'
 
-const Loading = () => {
+function Loading() {
   return (
-    <Container>
-      <div className="w-full h-full p-8">
-        <Skeleton className="w-full aspect-square rounded-xl md:aspect-[2.4/1]" />
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          <Skeleton className="aspect-square rounded-xl" />
-          <Skeleton className="aspect-square rounded-xl" />
-          <Skeleton className="aspect-square rounded-xl" />
-          <Skeleton className="aspect-square rounded-xl" />
-          <Skeleton className="aspect-square rounded-xl" />
-          <Skeleton className="aspect-square rounded-xl" />
-        </div>
-      </div>
-    </Container>
-  );
+    <div className='fixed top-0 left-0 grid place-content-center h-screen w-full bg-gray-300 opacity-70'>
+        <PuffLoader
+            size="50px"
+            color='black'
+            loading={true}
+        />
+    </div>
+  )
 }
- 
-export default Loading;
+
+export default Loading
