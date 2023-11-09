@@ -12,12 +12,8 @@ import FilterBar from "./components/FilterBar";
 
 
 
-interface SearchResultPageProps {
-  user_id: string;
-  authToken: string;
-}
 
-const SearchResultPage: React.FC<SearchResultPageProps> = ({ user_id, authToken }) => {
+const SearchResultPage: React.FC = ({ user_id, authToken }) => {
   const router = useRouter();
   const [totalPages, setTotalPages] = useState(1);
   const [page, setPage] = useState(0);
