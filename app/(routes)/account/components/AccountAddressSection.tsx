@@ -12,8 +12,7 @@ function AccountAddressSection({ user_id, authToken, setLoading }: AccountAddres
   const [addAddress, setAddAddress] = useState(false);
 
   return (
-    <div className="col-span-3">clear
-    clear
+    <div className="col-span-3">
       <div className="bg-white p-2">
         <div className="flex justify-between items-center mb-2">
           <div>
