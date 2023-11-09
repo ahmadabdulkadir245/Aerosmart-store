@@ -1,10 +1,11 @@
+"use client"
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Loading from '../loading';
-import AccountOptionsCard from './components/AccountOptionsCard';
+import Loading from '../../loading';
+import AccountOptionsCard from '../components/AccountOptionsCard';
 import ProductSlider from '@/components/ProductSlider';
-import AccountAddressSection from './components/AccountAddressSection';
+import AccountAddressSection from '../components/AccountAddressSection';
 
 
 interface OrdersProps {
