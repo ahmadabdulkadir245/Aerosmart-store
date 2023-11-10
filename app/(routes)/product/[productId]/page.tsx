@@ -11,6 +11,8 @@ import { TbCurrencyNaira } from 'react-icons/tb';
 import Image from 'next/image';
 import { ImFacebook, ImWhatsapp } from 'react-icons/im';
 import Footer from '@/components/footer';
+import SingleProductBtn from '../components/SingleProductBtn';
+import SingleProductWishlist  from '../components/SingleProductWishlist';
 
 export const revalidate = 0;
 
@@ -134,13 +136,7 @@ const ProductPage: React.FC<ProductPageProps> = async ({
           <BsStarHalf className='text-yellow-500 h-4'/>
        </div>
 
-    <div className="flex justify-between space-x-5">
-   <div className="capitalize w-[15%] lg:w-[200px] h-[48px] lg rounded-md border-[1px] border-gray-300 flex items-center justify-center mt-4 m-auto cursor-pointer space-x-3 hover:bg-yellow-500 hover:border-white hover:text-white transition-all delay-100 ease-in" onClick={handleAddToCart}>
-    <CiShoppingCart className="w-7 h-7  flex justify-between "/>
-    <div className="hidden lg:flex">add to cart</div>
-   </div>
-   <button className="capitalize w-[80%] h-[48px] lg:w-[200px] rounded-md text-white border-[1px] border-yellow-500 bg-yellow-500 block mt-4 m-auto hover:bg-green-500 hover:border-none transition-all delay-100 ease-in" onClick={handleAddToCart}>Buy Now</button>
-    </div>
+    <SingleProductBtn/>
     
     <hr className="bg-gray-400 my-3" />
 
@@ -155,10 +151,7 @@ const ProductPage: React.FC<ProductPageProps> = async ({
         </div>
       </div>
 
-      <div className={`flex items-center justify-center text-white  space-x-2 cursor-pointer ${wishlistExist ? 'bg-red-500' : 'bg-gray-400'} rounded-full  w-[100px] h-[35px] lg:hover:bg-red-500 transition-all delay-100`}  onClick={ !wishlistExist ? handleAddToWishlist  : handleRemoveFromWishlist} >
-      <AiFillHeart className="w-5 h-5"/>
-      <p className="font-changa">1000</p>
-      </div>
+  <SingleProductWishlist />
     </div>
 </div>
 

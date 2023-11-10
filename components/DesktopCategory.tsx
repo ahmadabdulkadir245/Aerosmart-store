@@ -132,11 +132,11 @@ const DesktopCategory = async () => {
       </div>
   </Link>
 ))}
-      {/* {categoriesData.map(category => (
+      {categoriesData.map(category => (
         <p key={category.id}>
           {category.name}
         </p>
-      ))} */}
+      ))}
     </div>
   );
 }
