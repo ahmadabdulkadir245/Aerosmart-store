@@ -9,6 +9,7 @@ import Loading from '../loading';
 import ProductSlider from '@/components/ProductSlider';
 import AccountOptionsCard from './components/AccountOptionsCard';
 import AccountDetails from './components/AccountDetails';
+import Footer from '@/components/footer';
 
 function Account() {
   const router = useRouter();
@@ -69,6 +70,7 @@ function Account() {
         <AccountOptionsCard selected={selected} setSelected={true} />
         <AccountDetails user_id={user_id} setLoading={false} />
       </div>
+      <Footer/>
     </>
   );
 }

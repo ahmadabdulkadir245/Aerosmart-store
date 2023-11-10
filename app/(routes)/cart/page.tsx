@@ -53,6 +53,7 @@ const CartPage = () => {
         
         {/* <ProductList title="Featured Products" items={products} /> */}
       </Container>
+      <Footer/>
     </div>
   )
 };

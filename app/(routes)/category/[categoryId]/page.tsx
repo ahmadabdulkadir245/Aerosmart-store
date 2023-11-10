@@ -9,6 +9,7 @@ import ColumnProducts from "./components/ColumnProducts";
 import Products from "./components/Products";
 import FilterBar from "./components/FilterBar";
 import FilterPart from "./components/FilterPart";
+import Footer from "@/components/footer";
 
 
 
@@ -183,6 +184,8 @@ const SearchResultPage: React.FC = () => {
 
         <ProductSlider sectionTitle={'discount products'} products={products.slice(21, 30)} path={'/'} discount={true} bgColor={'bg-gray-400'} />
       </div> */}
+      <Footer/>
+
     </>
   );
 };

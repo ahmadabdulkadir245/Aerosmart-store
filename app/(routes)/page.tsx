@@ -6,6 +6,7 @@ import DesktopCategory from "@/components/DesktopCategory";
 import Header from "@/components/Header";
 import Main from "@/components/Main";
 import ProductSlider from "@/components/ProductSlider";
+import Footer from "@/components/footer";
 import ProductList from "@/components/product-list";
 import Billboard from "@/components/ui/billboard";
 import Container from "@/components/ui/container";
@@ -23,6 +24,7 @@ const HomePage = async () => {
         <Main products={products} title="lastest products" />
       </div>
     </Container>
+    <Footer/>
           </>
   )
 };

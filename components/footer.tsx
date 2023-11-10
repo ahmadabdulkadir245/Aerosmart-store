@@ -5,6 +5,8 @@ import { RiFacebookFill } from "react-icons/ri";
 import { TfiEmail } from "react-icons/tfi"; // Corrected the import
 import { TiArrowRight } from "react-icons/ti";
 import { RxInstagramLogo } from "react-icons/rx";
+import { useEffect, useState } from "react";
+import Loading from "@/app/(routes)/loading";
 
 function Footer() {
   return (

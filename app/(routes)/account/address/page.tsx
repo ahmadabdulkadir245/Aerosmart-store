@@ -22,27 +22,15 @@ function Address() {
  const user_id = 1
  const authToken = 'token'
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  }, [loading]);
-
-  if (loading) {
-    return (
-      <>
-      {/* <Header/> */}
-        <Loading />
-        {/* <Footer/> */}
-      </>
-    );
-  }
 
   return (
+    <>
       <div className="px-3 py-4 text-gray-500 lg:py-0 lg:my-10 lg:grid grid-cols-4 gap-8 max-w-7xl mx-auto">
         <AccountOptionsCard selected={'address'} setSelected={true} />
         <AccountAddressSection user_id={user_id} authToken={authToken} setLoading={setLoading} />
       </div>
+      <Footer/>
+    </>
     //   <div className="max-w-7xl mx-auto">
     //     <ProductSlider sectionTitle={'recently viewed'} products={products.slice(3, 12)} path={'/'} discount={false} />
     //     <ProductSlider sectionTitle={'top selling'} products={products.slice(0, 9).reverse()} path={'/'} discount={true} />

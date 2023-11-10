@@ -92,7 +92,8 @@ function Navigation(props: NavigationProps) {
             )}
 
           </div>
-          <div className="text-xl lg:text-2xl font-changa text-gray-500 cursor-pointer" onClick={() => router.push("/")}>
+          <div className="text-xl lg:text-2xl  font-changa text-gray-500 cursor-pointer" onClick={() => router.push("/")}>
+            
             AERO<span className='text-yellow-500'>SMART</span>
           </div>
         </div>

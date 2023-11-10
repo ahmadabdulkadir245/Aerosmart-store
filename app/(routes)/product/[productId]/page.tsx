@@ -11,6 +11,7 @@ import { CiShoppingCart } from "react-icons/ci";
 import { TbCurrencyNaira } from 'react-icons/tb';
 import Image from 'next/image';
 import { ImFacebook, ImWhatsapp } from 'react-icons/im';
+import Footer from '@/components/footer';
 
 export const revalidate = 0;
 
@@ -175,6 +176,7 @@ prose-h2:mb-[24px] prose-p:text-xs prose-headings:capitalize prose-a:text-blue-5
 </p>
 </div>
       </Container>
+      <Footer/>
     </div>  
   )
 }

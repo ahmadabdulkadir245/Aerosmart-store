@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import Loading from '../../loading';
 import AccountOptionsCard from '../components/AccountOptionsCard';
 import SavedProducts from '../components/SavedProducts';
+import Footer from '@/components/footer';
 
 
 interface WishlistProps {
@@ -21,17 +22,7 @@ function Wishlist() {
   const products = [] 
   const user_id = 1
 
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 300);
-  }, [loading]);
 
-  if (loading) {
-    return (
-      <>
-        <Loading />
-      </>
-    );
-  }
 
   return (
     <>
@@ -44,6 +35,7 @@ function Wishlist() {
         <ProductSlider sectionTitle={'recently viewed'} products={products.slice(3, 12)} path={'/'} discount={false} />
         <ProductSlider sectionTitle={'top selling'} products={products.slice(0, 9).reverse()} path={'/'} discount={true} />
       </div> */}
+      <Footer/>
     </>
   );
 }

@@ -6,6 +6,7 @@ import AccountOptionsCard from '../components/AccountOptionsCard';
 import ProductSlider from '@/components/ProductSlider';
 import AccountOrders from '../components/AccountOrders';
 import { Product } from "@/types";
+import Footer from '@/components/footer';
 
 
 interface OrdersProps {
@@ -17,22 +18,10 @@ function Orders() {
   const router = useRouter();
   const orders = []
   const products = []
-
-
   const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 400);
-  }, [loading]);
 
-  if (loading) {
-    return (
-      <>
-        <Loading />
-      </>
-    );
-  }
+
+
 
   return (
     <>
@@ -44,6 +33,8 @@ function Orders() {
         {/* <ProductSlider sectionTitle={'recently viewed'} products={products.slice(3, 12)} path={'/'} discount={false} />
         <ProductSlider sectionTitle={'top selling'} products={products.slice(0, 9).reverse()} path={'/'} discount={true} /> */}
       </div>
+      <Footer/>
+
     </>
   );
 }

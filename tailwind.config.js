@@ -6,6 +6,13 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily: {
+      "poppins": "var(--poppins-font)",
+      "body": "var(--body-font)",
+      "changa": "var(--changa-font)",
+      "primary": "var(--primary-font)",
+      "iceland": "var(--iceland-font)",
+    },
     extend: {},
   },
   plugins: [require('tailwind-scrollbar-hide')],
