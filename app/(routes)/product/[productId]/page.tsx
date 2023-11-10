@@ -11,7 +11,6 @@ import { CiShoppingCart } from "react-icons/ci";
 import { TbCurrencyNaira } from 'react-icons/tb';
 import Image from 'next/image';
 import { ImFacebook, ImWhatsapp } from 'react-icons/im';
-import Loading from './loading';
 
 export const revalidate = 0;
 
