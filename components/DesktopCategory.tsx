@@ -1,15 +1,19 @@
-"use client"
-import { useRouter } from 'next/navigation';
+import Link from "next/link";
 import Image from 'next/image';
+import getCategories from "@/actions/get-categories";
 
 interface Category {
   id: number;
   category: string;
   Image: string;
   items: number;
+  name?: string;
 }
 
-function DesktopCategory() {
+const DesktopCategory = async () => {
+  const categoriesData = await getCategories();
+  console.log(categoriesData)
+
   const categories: Category[] = [
     {
       id: 1,
@@ -86,7 +90,7 @@ function DesktopCategory() {
         },
   ];
 
-  const router = useRouter();
+  // const router = useRouter();
 
   return (
     <div className="grid grid-cols-4 gap-2 lg:gap-8 mx-auto max-w-7xl bg-white p-6 my-6 lg:my-20 font-poppins text-gray-800">
@@ -98,37 +102,41 @@ function DesktopCategory() {
       </div>
 
       {categories.map((category) => (
-        <div
-          className="bg-white grid grid-cols-1 grid-flow-row-dense lg:grid-cols-4 xl:grid-cols-4 lg:gap-y-6 lg:gap-x-0 max-w-7xl"
-          key={category.id}
-          onClick={() => router.push(`/category/${category.category}`)}
-        >
-          <div className="col-span-1 lg:col-span-4">
-            <div className="lg:flex space-x-4 items-center cursor-pointer">
+  <Link href={`/category/${category.category}`} key={category.id}>
+      <div
+        className="bg-white grid grid-cols-1 grid-flow-row-dense lg:grid-cols-4 xl:grid-cols-4 lg:gap-y-6 lg:gap-x-0 max-w-7xl"
+      >
+        <div className="col-span-1 lg:col-span-4">
+          <div className="lg:flex space-x-4 items-center cursor-pointer">
             <div className="relative bg-gray-300 w-full h-[80px] lg:w-[120px] md:h-[120px] lg:h-[80px] rounded-md overflow-hidden">
-          <Image
-            src={category.Image}
-            alt={category.category}
-            width={120}
-            height={80}
-            objectFit="cover"
-            loading="lazy"
-            // placeholder="blur"
-          />
-        </div>
+              <Image
+                src={category.Image}
+                alt={category.category}
+                width={120}
+                height={80}
+                objectFit="cover"
+                loading="lazy"
+              />
+            </div>
 
-              <div className="mt-1 lg:mt-0">
-                <p className="text-xs lg:text-sm tracking-wide capitalize mb-[2px]">
-                  {category.category}
-                </p>
-                <p className="text-gray-400 hidden lg:block text-xs">
-                  {category.items} items
-                </p>
-              </div>
+            <div className="mt-1 lg:mt-0">
+              <p className="text-xs lg:text-sm tracking-wide capitalize mb-[2px]">
+                {category.category}
+              </p>
+              <p className="text-gray-400 hidden lg:block text-xs">
+                {category.items} items
+              </p>
             </div>
           </div>
         </div>
-      ))}
+      </div>
+  </Link>
+))}
+      {/* {categoriesData.map(category => (
+        <p key={category.id}>
+          {category.name}
+        </p>
+      ))} */}
     </div>
   );
 }
