@@ -93,12 +93,12 @@ const CartItem: React.FC<CartItemProps> = ({
                 </div>
 
                 <div>
-                <button className="hidden capitalize px-5 h-[38px] rounded-sm  border-[1px]  bg-transparent  m-auto tracking-wide cursor-pointer hover:bg-red-600 active:bg-red-500 hover:text-white transition-all duration-300 ease-in-out"  onClick={handleRemoveFromCart}>REMOVE
+                <button className="hidden capitalize px-5 h-[38px] rounded-sm  border-[1px]  bg-transparent  m-auto tracking-wide cursor-pointer hover:bg-red-600 active:bg-red-500 hover:text-white transition-all duration-300 ease-in-out"  onClick={onRemove}>REMOVE
                 </button>
                 </div>
                 <div
           className='flex space-x-3 items-center  bg-red-500  py-2 px-3 text-white rounded-md hover:bg-red-600 cursor-pointer transition duration-200 ease-in'
-          onClick={handleRemoveFromCart}
+          onClick={onRemove}
         >
           <AiOutlineDelete className='' /> 
              </div>
