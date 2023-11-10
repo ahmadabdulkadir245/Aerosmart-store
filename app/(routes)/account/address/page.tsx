@@ -2,10 +2,12 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import Loading from '../../loading';
 import AccountOptionsCard from '../components/AccountOptionsCard';
 import ProductSlider from '@/components/ProductSlider';
 import AccountAddressSection from '../components/AccountAddressSection';
+import Loading from '../../loading'
+import Header from '@/components/Header';
+import Footer from '@/components/footer';
 
 
 interface OrdersProps {
@@ -23,13 +25,15 @@ function Address() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 400);
+    }, 2000);
   }, [loading]);
 
   if (loading) {
     return (
       <>
+      {/* <Header/> */}
         <Loading />
+        {/* <Footer/> */}
       </>
     );
   }
