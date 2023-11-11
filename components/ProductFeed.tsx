@@ -1,5 +1,5 @@
+import Pagination from './Pagination';
 import Products from './Products';
-import { Pagination } from './Pagination';
 import getProducts from '@/actions/get-products';
 
 
