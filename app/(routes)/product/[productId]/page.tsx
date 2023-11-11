@@ -72,12 +72,12 @@ const ProductPage: React.FC<ProductPageProps> = async ({
 {imageSlider.map((image, index) => (
 
 <div key={index} className="relative   w-[80px] h-[60px]  overflow-hidden rounded-md border-[3px]  cursor-pointer hover:border-blue-500 p-4">
-  <Image src={product?.images[0].url} alt={product?.name} layout="fill" objectFit="cover"/>
+  <Image src={product?.images[0].url} alt={product?.name} layout="fill" objectFit="contain"/>
 </div>
 ))}
 </div>
 <div className="relative w-full h-[250px] lg:w-full  lg:h-[350px] overflow-hidden rounded-md border-0 border-gray-900 lg:rounded-none">
-  <Image src={product?.images[0].url} alt={product?.name}  layout="fill" objectFit="cover" />
+  <Image src={product?.images[0].url} alt={product?.name}  layout="fill" objectFit="contain" />
 </div>
 
 </div>

@@ -39,7 +39,8 @@ function SlidesWithDiscount({ product, discount }: SlidesWithDiscountProps) {
   return (
     <div onClick={handleClick} className=" group cursor-pointer">
             <div className='relative m-auto overflow-hidden shadow-sm '>
-              <Image src={product.images[0]?.url} alt={product?.name}  objectFit='contain'     
+              <Image src={product.images[0]?.url} alt={product?.name} 
+               objectFit='contain'     
               width={190}
               height={120}
               loading={'lazy'}
