@@ -31,7 +31,7 @@ const Gallery: React.FC<GalleryProps> = ({
                 fill
                 src={image.url}
                 alt="Image"
-                objectFit="cover"
+                objectFit="contain"
                 placeholder='blur'
               />
             </div>
