@@ -73,7 +73,7 @@ const Products: React.FC<ProductProps> = ({
     <>
       {loading ? (
         <div className="relative flex flex-col bg-white z-30 shadow-xl rounded-sm text-gray-500 overflow-hidden transition delay-100 ease-in-out">
-          <Link href={`/products/${id}`}>
+          <Link href={`/product/${id}`}>
             <div className="relative w-full h-[160px]">
               <Image
                 src={images[0].url}
