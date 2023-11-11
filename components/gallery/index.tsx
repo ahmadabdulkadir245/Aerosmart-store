@@ -14,7 +14,7 @@ interface GalleryProps {
 const Gallery: React.FC<GalleryProps> = ({
   images = []
 }) => {
-  return ( 
+  return (    
     <Tab.Group as="div" className="flex flex-col-reverse">
       <div className="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none">
         <Tab.List className="grid grid-cols-4 gap-6">
