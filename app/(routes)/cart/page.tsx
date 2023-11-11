@@ -8,13 +8,10 @@ import Summary from './components/summary';
 import CartItem from './components/cart-item';
 import Footer from '@/components/footer';
 import ProductSlider from '@/components/ProductSlider';
-import { Product } from '@/types';
 
-interface CartPageProps {
-  products: Product[]
-}
 
-const CartPage: React.FC<CartPageProps> = () => {
+
+const CartPage: React.FC = () => {
   const [isMounted, setIsMounted] = useState(false);
   const cart = useCart();
   
