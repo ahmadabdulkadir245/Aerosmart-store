@@ -3,6 +3,7 @@ import { Product } from "@/types";
 import ProductSlider from "./ProductSlider";
 import ProductList from "./product-list";
 import DesktopCategory from "./DesktopCategory";
+import ProductFeed from "./ProductFeed";
 
 
 interface MainProps {
@@ -24,6 +25,7 @@ interface MainProps {
       <div className="flex flex-col gap-y-8 px-4 sm:px-6 lg:px-8">
           <ProductList title="Featured Products" items={products} />
         </div>
+        <ProductFeed/>
     </>
   );
 }

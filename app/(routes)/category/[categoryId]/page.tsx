@@ -1,7 +1,6 @@
 import { BiSort } from "react-icons/bi";
 import { BsGrid1X2Fill } from "react-icons/bs";
 import { HiOutlineFilter } from "react-icons/hi";
-import Products from "./components/Products";
 import FilterBar from "./components/FilterBar";
 import FilterPart from "./components/FilterPart";
 import Footer from "@/components/footer";
@@ -9,6 +8,7 @@ import { Pagination } from "./Pagination";
 import ProductsDisplay from "./components/ProductsDisplay";
 import getProducts from "@/actions/get-products";
 import ProductSlider from "@/components/ProductSlider";
+import Products from "@/components/Products";
 
 
 
@@ -48,7 +48,7 @@ const SearchResultPage: React.FC = async () => {
         <div className="col-span-3 hidden lg:block">
           <FilterBar />
           <div className='grid grid-cols-3 grid-flow-row-dense md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 mx-auto m-2 gap-3 my-5'>
-            {searchProducts.map(({ id, title, price, description, image_url, category, }: any) => (
+            {slider.map(({ id, title, price, description, images, category, }: any) => (
               <Products
                 key={id}
                 id={id}
@@ -56,7 +56,7 @@ const SearchResultPage: React.FC = async () => {
                 price={price}
                 category={category}
                 description={description}
-                image_url={image_url}
+                images={images}
               />
             ))}
           </div>
