@@ -4,11 +4,11 @@ import { HiOutlineFilter } from "react-icons/hi";
 import FilterBar from "./components/FilterBar";
 import FilterPart from "./components/FilterPart";
 import Footer from "@/components/footer";
-import { Pagination } from "./Pagination";
 import ProductsDisplay from "./components/ProductsDisplay";
 import getProducts from "@/actions/get-products";
 import ProductSlider from "@/components/ProductSlider";
 import Products from "@/components/Products";
+import Pagination from "@/components/Pagination";
 
 
 
@@ -60,13 +60,13 @@ const SearchResultPage: React.FC = async () => {
               />
             ))}
           </div>
-              <Pagination/>
+              <Pagination receivedProducts={slider} />
         </div>
 
         {/* display products */}
               <ProductsDisplay searchProducts={products}/>
       </div>
-      <Pagination/>
+      <Pagination receivedProducts={slider} />
 
 
       <div className="max-w-7xl mx-auto">
