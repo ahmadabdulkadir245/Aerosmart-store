@@ -1,59 +1,20 @@
-const FilterPart: React.FC = () => {
+import getCategories from "@/actions/get-categories";
+
+const FilterPart: React.FC = async () => {
+  const categoriesData = await getCategories();
+
     return (
       <div className="hidden lg:block col-span-1 text-xs">
         {/* Product categories section */}
         <div className="py-4 px-6 bg-white font-poppins rounded-md">
           <h3 className="text-lg font-semibold mb-3">Product categories</h3>
           <div className="space-y-3">
-          <div className="flex items-center space-x-2">
-                  <input type="checkbox" name="" id="" className="cursor-pointer"/>
-                <p className="capitalize">Agriculture Materials</p>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <input type="checkbox" name="" id="" className="cursor-pointer"/>
-                <p className="capitalize">bricks, blocks & kerbs</p>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <input type="checkbox" name="" id="" className="cursor-pointer"/>
-                <p className="capitalize">building materials</p>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <input type="checkbox" name="" id="" className="cursor-pointer"/>
-                <p className="capitalize">concrete, cement & stones</p>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <input type="checkbox" name="" id="" className="cursor-pointer"/>
-                <p className="capitalize">doors</p>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <input type="checkbox" name="" id="" className="cursor-pointer"/>
-                <p className="capitalize">electrical items</p>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <input type="checkbox" name="" id="" className="cursor-pointer"/>
-                <p className="capitalize">paint</p>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <input type="checkbox" name="" id="" className="cursor-pointer"/>
-                <p className="capitalize">pulmbing</p>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <input type="checkbox" name="" id="" className="cursor-pointer"/>
-                <p className="capitalize">roof covering</p>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <input type="checkbox" name="" id="" className="cursor-pointer"/>
-                <p className="capitalize">tiles</p>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <input type="checkbox" name="" id="" className="cursor-pointer"/>
-                <p className="capitalize">windows</p>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <input type="checkbox" name="" id="" className="cursor-pointer"/>
-                <p className="capitalize">wood</p>
-                </div>
-          
+          {categoriesData.map(category => (
+         <div key={category.id} className="flex items-center space-x-2">
+         <input type="checkbox" name={category.name} id="" className="cursor-pointer"/>
+       <p className="capitalize">{category.name}</p>
+       </div>
+      ))} 
           </div>
         </div>
         {/* Custom price section */}

@@ -13,6 +13,7 @@ import { ImFacebook, ImWhatsapp } from 'react-icons/im';
 import Footer from '@/components/footer';
 import SingleProductBtn from '../components/SingleProductBtn';
 import SingleProductWishlist  from '../components/SingleProductWishlist';
+import ProductSlider from '@/components/ProductSlider';
 
 export const revalidate = 0;
 
@@ -167,7 +168,11 @@ prose-h2:mb-[24px] prose-p:text-xs prose-headings:capitalize prose-a:text-blue-5
 {product?.description}
 </p>
 </div>
+<ProductSlider sectionTitle={'related products'} products={suggestedProducts} path={'/'} discount={false} />
+
+<ProductSlider sectionTitle={'top selling'} products={suggestedProducts} path={'/'} discount={false} />
       </Container>
+
       <Footer/>
     </div>  
   )

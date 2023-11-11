@@ -70,7 +70,7 @@ function ProductSlider({ sectionTitle, products, path, bgColor, discount }: Prod
   return (
     <div className='my-5 '>
       <div className={`flex items-center  justify-between  p-2 px-3 ${bgColor ? bgColor : 'bg-white'} text-gray-700 shadow-sm`}>
-        <p className="font-bold uppercase ">{sectionTitle}</p>
+        <p className="font-bold uppercase font-changa leading-7">{sectionTitle}</p>
         <Link href={path} className="capitalize text-xs">
           show all
         </Link>

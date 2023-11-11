@@ -1,76 +1,24 @@
-"use client"
-import { useRouter } from "next/navigation";
 import { BiSort } from "react-icons/bi";
 import { BsGrid1X2Fill } from "react-icons/bs";
 import { HiOutlineFilter } from "react-icons/hi";
-import { useEffect, useMemo, useState } from "react";
-import ReactPaginate from "react-paginate";
-import ColumnProducts from "./components/ColumnProducts";
 import Products from "./components/Products";
 import FilterBar from "./components/FilterBar";
 import FilterPart from "./components/FilterPart";
 import Footer from "@/components/footer";
+import { Pagination } from "./Pagination";
+import ProductsDisplay from "./components/ProductsDisplay";
+import getProducts from "@/actions/get-products";
+import ProductSlider from "@/components/ProductSlider";
 
 
 
 
-const SearchResultPage: React.FC = () => {
-  const router = useRouter();
-  const [totalPages, setTotalPages] = useState(1);
-  const [page, setPage] = useState(0);
-  
+const SearchResultPage: React.FC = async () => {
   const searchResult = 'keywords';
-  const products = useMemo(() => {
-    return [];
-  }, []);
-  const searchFilter = useMemo(() => {
-    return products.filter((product: any) => {
-      return product.category == searchResult;
-    });
-  }, [products, searchResult]);
-
-  // perPage function to render different amount of pages for each device
-  const perPages = {
-    sm: 8,
-    md: 12,
-    lg: 12,
-  };
-  const [perPage, setPerPage] = useState(perPages.sm);
-  // const searchProducts = searchFilter.slice(perPage * page, perPage * (page + 1));
+  const products: any = []
+  const slider = await getProducts({ isFeatured: true });
 
   let searchProducts: any = []
-
-  useEffect(() => {
-    const handleResize = () => {
-      const { innerWidth } = window;
-      let newPerPage = perPages.sm;
-
-      if (innerWidth >= 768 && innerWidth < 1024) {
-        newPerPage = perPages.md;
-      } else if (innerWidth >= 1024) {
-        newPerPage = perPages.lg;
-      }
-
-      setPerPage(newPerPage);
-    };
-
-    handleResize();
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, [perPages.lg, perPages.sm, perPages.md]);
-
-  useEffect(() => {
-    setTotalPages(Math.ceil(searchFilter.length / perPage));
-  }, [searchFilter, perPage]);
-
-  const [grid, setGrid] = useState(true);
-  const gridHandler = () => {
-    setGrid(!grid);
-  };
 
   return (
     <>
@@ -79,8 +27,11 @@ const SearchResultPage: React.FC = () => {
         <div className="flex justify-between items-center uppercase bg-gray-300 p-2 text-gray-700 lg:hidden">
           <div className="flex  items-center space-x-2 cursor-pointer">
             <BsGrid1X2Fill className="h-5 w-5" />
-            <p onClick={gridHandler}>
-              {grid ? "column" : "grid"}
+            <p
+            //  onClick={gridHandler}
+             >
+              grid
+              {/* {grid ? "column" : "grid"} */}
             </p>
           </div>
           <div className="flex items-center space-x-2 cursor-pointer">
@@ -109,81 +60,22 @@ const SearchResultPage: React.FC = () => {
               />
             ))}
           </div>
-
-          <div className='w-full px-[10px] my-10 col-span-3'>
-            <ReactPaginate
-              breakLabel='...'
-              previousLabel='PREV'
-              nextLabel='NEXT'
-              pageRangeDisplayed={1}
-              pageCount={totalPages}
-              onPageChange={({ selected }) => setPage(selected)}
-              renderOnZeroPageCount={null}
-              previousClassName='flex items-center justify-center capitalize   w-[70px] h-[30px] rounded-sm  border-[1px]  bg-transparent   tracking-wide cursor-pointer  text-xs hover:bg-gray-300 transition duration-300 ease-in'
-              nextClassName='flex items-center justify-center capitalize   w-[70px] h-[30px] rounded-sm  border-[1px]  bg-transparent   tracking-wide cursor-pointer text-xs hover:bg-gray-300 transition duration-300 ease-in'
-              containerClassName='flex justify-center items-center mx-auto space-x-2'
-              pageLinkClassName='flex items-center justify-center capitalize   w-[30px] h-[30px] rounded-sm  border-[1px]  bg-transparent text-xs'
-              activeClassName='bg-yellow-400 text-white  transition-all duration-300 ease-in-out'
-            />
-          </div>
+              <Pagination/>
         </div>
 
         {/* display products */}
-        {grid ?
-          <div className='grid grid-cols-2 grid-flow-row-dense md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 mx-auto m-2 gap-2  md:px-4 pt-2 lg:hidden'>
-            {searchProducts.map(({ id, title, price,category,  description, image_url }: any) => (
-              <Products
-                key={id}
-                id={id}
-                title={title}
-                price={price}
-                category={category}
-                description={description}
-                image_url={image_url}
-              />
-            ))}
-          </div>
-          :
-          <div className="mt-2 ">
-            {searchProducts.map(({ id, title, price, category, description, image_url }: any) => (
-              <ColumnProducts
-                key={id}
-                id={id}
-                title={title}
-                price={price}
-                category={category}
-                description={description}
-                image_url={image_url}
-              />
-            ))}
-          </div>
-        }
+              <ProductsDisplay searchProducts={products}/>
       </div>
+      <Pagination/>
 
-      <div className='w-full px-[10px] my-10 lg:hidden'>
-        <ReactPaginate
-          breakLabel='...'
-          previousLabel='PREV'
-          nextLabel='NEXT'
-          pageRangeDisplayed={1}
-          pageCount={totalPages}
-          onPageChange={({ selected }) => setPage(selected)}
-          renderOnZeroPageCount={null}
-          previousClassName='flex items-center justify-center capitalize   w-[70px] h-[30px] rounded-sm  border-[1px]  bg-transparent   tracking-wide cursor-pointer  text-xs hover:bg-gray-300 transition duration-300 ease-in'
-          nextClassName='flex items-center justify-center capitalize   w-[70px] h-[30px] rounded-sm  border-[1px]  bg-transparent   tracking-wide cursor-pointer text-xs hover:bg-gray-300 transition duration-300 ease-in'
-          containerClassName='flex justify-center items-center mx-auto space-x-2'
-          pageLinkClassName='flex items-center justify-center capitalize   w-[30px] h-[30px] rounded-sm  border-[1px]  bg-transparent text-xs'
-          activeClassName='bg-yellow-400 text-white  transition-all duration-300 ease-in-out'
-        />
+
+      <div className="max-w-7xl mx-auto">
+        <ProductSlider sectionTitle={'related products'} products={slider} path={'/'} discount={false} />
+
+        <ProductSlider sectionTitle={'top selling'} products={slider} path={'/'} discount={false} />
+
+        <ProductSlider sectionTitle={'discount products'} products={slider} path={'/'} discount={true} bgColor={'bg-gray-400'} />
       </div>
-
-      {/* <div className="max-w-7xl mx-auto">
-        <ProductSlider sectionTitle={'latest products'} products={products.slice(0, 9)} path={'/'} />
-
-        <ProductSlider sectionTitle={'top selling'} products={products.slice(9, 20)} path={'/'} discount={true} />
-
-        <ProductSlider sectionTitle={'discount products'} products={products.slice(21, 30)} path={'/'} discount={true} bgColor={'bg-gray-400'} />
-      </div> */}
       <Footer/>
 
     </>

@@ -12,7 +12,6 @@ interface Category {
 
 const DesktopCategory = async () => {
   const categoriesData = await getCategories();
-  console.log(categoriesData)
 
   const categories: Category[] = [
     {
