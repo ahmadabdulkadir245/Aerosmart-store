@@ -66,7 +66,9 @@ const SearchResultPage: React.FC = async () => {
         {/* display products */}
               <ProductsDisplay searchProducts={products}/>
       </div>
+    <div className='w-full px-[10px] my-10 lg:hidden'>
       <Pagination receivedProducts={slider} />
+      </div>
 
 
       <div className="max-w-7xl mx-auto">

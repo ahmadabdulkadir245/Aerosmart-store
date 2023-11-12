@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import ReactPaginate from "react-paginate";
 
 interface PaginationProps {
@@ -41,10 +41,14 @@ const Pagination: React.FC<PaginationProps> = ({ receivedProducts }) => {
   }, [perPages.lg, perPages.sm, perPages.md]);
 
   const products = receivedProducts.slice(perPage * page, perPage * (page + 1));
+  
+  const productPages = useMemo(() => {
+    return [0,1]
+  }, [])
 
   useEffect(() => {
-    setTotalPages(Math.ceil(receivedProducts.length / perPage));
-  }, [receivedProducts, perPage]);
+    setTotalPages(Math.ceil(productPages.length / perPage));
+  }, [productPages, perPage]);
 
   return (
     <div className='w-full px-[10px] my-10 col-span-3'>
