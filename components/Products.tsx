@@ -9,30 +9,32 @@ interface ProductProps {
   id: string;
   title: string;
   price: number;
-  description: string | null | undefined; // Adjusted type
   images: { url: string }[];
-  category: string;
+  category: string; 
   user_id?: string | null;
+  description: string | null | undefined; 
 }
 
 const Products: React.FC<ProductProps> = ({
   id,
   title,
   price,
-  description,
+  description = "This is the description of the product, it is strong, durable, and lasts long.",
   images,
   user_id,
 }) => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timeoutId = setTimeout(() => {
       setLoading(true);
     }, 300);
+
+    return () => clearTimeout(timeoutId); // Cleanup the timeout on component unmount
   }, []); // Removed 'loading' from dependency array as it might lead to an infinite loop
 
   const handleAddToCart = async () => {
-    if (user_id === null) {
+    if (!user_id) {
       const product = {
         id,
         title,
@@ -76,8 +78,8 @@ const Products: React.FC<ProductProps> = ({
           <Link href={`/product/${id}`}>
             <div className="relative w-full h-[160px]">
               <Image
-                src={images[0].url}
-                alt={images[0].url}
+                src={images[0]?.url || ""}
+                alt={title}
                 layout="fill"
                 objectFit="contain"
                 placeholder="blur"
@@ -89,14 +91,7 @@ const Products: React.FC<ProductProps> = ({
             {title}
           </p>
           <div className="font-primary line-clamp-2 lg:line-clamp-3 px-2 text-xs h-[30px] lg:h-[50px] text-gray-800">
-            {description ? (
-              description
-            ) : (
-              <p>
-                this is the descripton of the product, it is strong, durable,
-                and last long.
-              </p>
-            )}
+            {description}
           </div>
           <div className="font-changa px-2 flex items-center space-x-1 text-xs mt-[2px] text-gray-800">
             <TbCurrencyNaira className="w-4 h-4 text-gray-600" />

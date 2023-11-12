@@ -18,7 +18,7 @@ const SearchResultPage: React.FC = async () => {
   const products: any = []
   const slider = await getProducts({ isFeatured: true });
 
-  let searchProducts: any = []
+  // let searchProducts: any = []
 
   return (
     <>
@@ -64,7 +64,7 @@ const SearchResultPage: React.FC = async () => {
         </div>
 
         {/* display products */}
-              <ProductsDisplay searchProducts={products}/>
+              <ProductsDisplay searchProducts={slider}/>
       </div>
     <div className='w-full px-[10px] my-10 lg:hidden'>
       <Pagination receivedProducts={slider} />

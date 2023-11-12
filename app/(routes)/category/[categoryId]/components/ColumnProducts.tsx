@@ -6,26 +6,31 @@ import { TbCurrencyNaira } from 'react-icons/tb';
 
 interface ColumnProductsProps {
   id: string;
-  image_url: string;
+  images: { url: string }[];
   title: string;
   price: number;
   category: string;
-  description: string;
+  description: string | null | undefined; 
 }
 
-const ColumnProducts: React.FC<ColumnProductsProps> = ({ id, image_url, title, price, category, description }) => {
+const ColumnProducts: React.FC<ColumnProductsProps> = ({ id, images, title, price, category, description }) => {
   return (
     <div className='bg-white p-2 pb-0 my-2'>
       <div className="flex space-x-3" key={id}>
         <div className='h-[100px] w-[150px] bg-gray-200'>
           <div className='relative h-[100px] w-[150px]'>
-            <Image src={image_url} alt={title} layout="fill" objectFit='contain' />
+            <Image
+               src={images[0].url}
+                alt={images[0].url}
+                 layout="fill"
+                placeholder="blur"
+                  objectFit='contain' />
           </div>
         </div>
 
         <div className=''>
           <p className="uppercase font-poppins line-clamp-1">{title}</p>
-          <p className='text-xs line-clamp-2' dangerouslySetInnerHTML={{ __html: description }} />
+          <p className='text-xs line-clamp-2'>{description}</p>
 
           <p className="flex items-center space-x-2 text-sm">
             <BsStarFill className='h-6 text-yellow-500' />
