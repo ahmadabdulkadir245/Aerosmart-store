@@ -54,7 +54,6 @@ export default function RootLayout({
         {/* <Navbar /> */}
         <Header/>
         {children}
-        {/* <Footer /> */}
       </body>
     </html>
     </ClerkProvider>
