@@ -1,9 +1,7 @@
-import { Urbanist } from 'next/font/google'
-
+import { ClerkProvider } from '@clerk/nextjs'
 import ModalProvider from '@/providers/modal-provider'
 import ToastProvider from '@/providers/toast-provider'
 import Navbar from '@/components/navbar'
-import Footer from '@/components/footer'
 import { Poppins, Merriweather_Sans, Play , Iceland, Changa} from'next/font/google';
 
 const poppins = Poppins({
@@ -35,7 +33,6 @@ const merriweather = Merriweather_Sans({
 import './globals.css'
 import Header from '@/components/Header'
 
-const font = Urbanist({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Aerosmart Store',
@@ -49,8 +46,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    <ClerkProvider>
     <html lang="en" className={`${poppins.variable} ${merriweather.variable} ${play.variable} ${iceland.variable} ${changa.variable} `}>
-      <body className={font.className}>
+      <body>
         <ToastProvider />
         <ModalProvider />
         {/* <Navbar /> */}
@@ -59,5 +57,6 @@ export default function RootLayout({
         {/* <Footer /> */}
       </body>
     </html>
+    </ClerkProvider>
   )
 }
