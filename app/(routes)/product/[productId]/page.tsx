@@ -89,7 +89,8 @@ const ProductPage: React.FC<ProductPageProps> = async ({
     </div>
     <hr className="bg-gray-400 my-1" />
     <div className='font-primary  flex items-center  text-xl   text-gray-800'>
-      <TbCurrencyNaira  className="w-5 h-7 text-gray-600"/>{product?.price.toLocaleString()}
+      <TbCurrencyNaira  className="w-5 h-7 text-gray-600"/>
+      {product?.price.toLocaleString()}
     </div>
 
     
@@ -132,7 +133,7 @@ const ProductPage: React.FC<ProductPageProps> = async ({
 
   <SingleProductWishlist />
     </div>
-P</div>
+</div>
 
 </div>
 
@@ -143,7 +144,7 @@ P</div>
   <p className="prose prose-h1:text-3xl   prose-h1:font-semibold prose-h2:text-2xl  prose-h2:font-semibold prose-h2:mt-[0px]
 prose-h2:mb-[24px] prose-p:text-xs prose-headings:capitalize prose-a:text-blue-500 hover:prose-a:text-blue-800 font-poppins" 
 >
-{product?.description}
+{product?.description ? product.description : "Discover innovation and style with our premium product. Elevate your everyday with quality and functionality. Embrace excellence. Join a community that values sophistication and performance. Your journey starts here."}
 </p>
 </div>
 <ProductSlider sectionTitle={'related products'} products={suggestedProducts} path={'/'} discount={false} />
