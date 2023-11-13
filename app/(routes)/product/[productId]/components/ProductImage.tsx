@@ -15,17 +15,20 @@ const ProductImage: React.FC<ProductImageProps> = ({ product }) => {
   const selectDisplayImageHandler = (image_url: string) => {
     setDisplayImage(image_url);
   };
+  console.log(displayImage)
 
   return (
     <div className="col-span-2 ">
       <div className="flex flex-col-reverse lg:flex-row">
         <div className="flex items-center space-x-2 my-3 w-full h-full lg:block lg:space-x-0 lg:space-y-2  lg:my-0 lg:w-[150px] lg:h-[350px]   lg:overflow-y-scroll scrollbar-hide">
           {product.images.map((image) => (
-            <div
-              key={image.url}
-              className="relative w-[80px] h-[60px]  overflow-hidden rounded-md border-[3px]  cursor-pointer hover:border-blue-500 p-4"
-              onClick={() => selectDisplayImageHandler(image.url)}
-            >
+          <div
+          key={image.url}
+          className={`relative w-[80px] h-[60px]  overflow-hidden rounded-md border-[3px]  cursor-pointer p-4 ${
+            displayImage == image.url ? 'border-blue-500' : ''
+          }`}
+          onClick={() => selectDisplayImageHandler(image.url)}
+        >
               <Image src={image.url} alt={product.name} layout="fill" objectFit="contain" />
             </div>
           ))}
