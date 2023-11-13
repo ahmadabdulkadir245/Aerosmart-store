@@ -29,7 +29,8 @@ const ProductImage: React.FC<ProductImageProps> = ({ product }) => {
           }`}
           onClick={() => selectDisplayImageHandler(image.url)}
         >
-              <Image src={image.url} alt={product.name} layout="fill" objectFit="contain" />
+              <Image src={image.url} alt={product.name} layout="fill" objectFit="contain"
+               />
             </div>
           ))}
         </div>

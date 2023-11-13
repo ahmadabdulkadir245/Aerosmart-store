@@ -146,9 +146,9 @@ prose-h2:mb-[24px] prose-p:text-xs prose-headings:capitalize prose-a:text-blue-5
 {product?.description}
 </p>
 </div>
-{/* <ProductSlider sectionTitle={'related products'} products={suggestedProducts} path={'/'} discount={false} />
+<ProductSlider sectionTitle={'related products'} products={suggestedProducts} path={'/'} discount={false} />
 
-<ProductSlider sectionTitle={'top selling'} products={suggestedProducts} path={'/'} discount={false} /> */}
+<ProductSlider sectionTitle={'top selling'} products={suggestedProducts} path={'/'} discount={false} />
       </Container>
 
       <Footer/>
