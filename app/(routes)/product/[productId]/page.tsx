@@ -142,7 +142,7 @@ const ProductPage: React.FC<ProductPageProps> = async ({
   <hr className="bg-gray-400 my-2" />
 
   <p className="prose prose-h1:text-3xl   prose-h1:font-semibold prose-h2:text-2xl  prose-h2:font-semibold prose-h2:mt-[0px]
-prose-h2:mb-[24px] prose-p:text-xs prose-headings:capitalize prose-a:text-blue-500 hover:prose-a:text-blue-800 font-poppins" 
+prose-h2:mb-[24px] text-xs prose-headings:capitalize prose-a:text-blue-500 hover:prose-a:text-blue-800 font-poppins" 
 >
 {product?.description ? product.description : "Discover innovation and style with our premium product. Elevate your everyday with quality and functionality. Embrace excellence. Join a community that values sophistication and performance. Your journey starts here."}
 </p>
