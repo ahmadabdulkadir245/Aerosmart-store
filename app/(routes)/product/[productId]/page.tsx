@@ -1,18 +1,15 @@
-import ProductList from '@/components/product-list'
-import Gallery from '@/components/gallery';
-import Info from '@/components/info';
 import getProduct from '@/actions/get-product';
 import getProducts from '@/actions/get-products';
 import Container from '@/components/ui/container';
 import { BsStarFill, BsStarHalf, BsTwitter } from 'react-icons/bs';
 import { TbCurrencyNaira } from 'react-icons/tb';
-import Image from 'next/image';
 import { ImFacebook, ImWhatsapp } from 'react-icons/im';
 import Footer from '@/components/footer';
 import SingleProductBtn from '../components/SingleProductBtn';
-import SingleProductWishlist  from '../components/SingleProductWishlist';
+import SingleProductWishlist  from '../components/SingleProductWishlist'; 
 import ProductSlider from '@/components/ProductSlider';
 import { AiFillStar } from 'react-icons/ai';
+import ProductImage from './components/ProductImage';
 
 export const revalidate = 0;
 
@@ -64,25 +61,7 @@ const ProductPage: React.FC<ProductPageProps> = async ({
         </div> */}
          <div className="px-3 pt-5  text-gray-500 max-w-7xl mx-auto lg:grid grid-cols-3 gap-x-10 lg:mt-8 lg:p-8 lg:bg-white ">
 
-<div className="col-span-2 ">
-<div className="flex flex-col-reverse lg:flex-row">
-
-
-<div className="flex items-center space-x-2 my-3 w-full h-full   lg:block lg:space-x-0 lg:space-y-2  lg:my-0 lg:w-[150px] lg:h-[350px]   lg:overflow-y-scroll scrollbar-hide">
-{product.images.map((image) => (
-
-<div key={image.url} className="relative   w-[80px] h-[60px]  overflow-hidden rounded-md border-[3px]  cursor-pointer hover:border-blue-500 p-4">
-  <Image src={image.url} alt={product?.name} layout="fill" objectFit="contain"/>
-</div>
-))}
-</div>
-<div className="relative w-full h-[250px] lg:w-full  lg:h-[350px] overflow-hidden rounded-md border-0 border-gray-900 lg:rounded-none">
-  <Image src={product?.images[0].url} alt={product?.name}  layout="fill" objectFit="contain" />
-</div>
-
-</div>
-</div>
-
+        <ProductImage product={product}/>
 
 <div className="col-span-1">
 <div className="flex items-center justify-between mt-5 lg:mt-0 lg:block">
@@ -153,7 +132,7 @@ const ProductPage: React.FC<ProductPageProps> = async ({
 
   <SingleProductWishlist />
     </div>
-</div>
+P</div>
 
 </div>
 
